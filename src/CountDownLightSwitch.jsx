@@ -2,14 +2,14 @@
 import React, { useState } from "react";
 import './CountDownLightSwitch.css'
 const [toggle,setToggle]=useState("")
-const[timer,setTimer]=useState("")
+const[timer,setTimer]=useState("30")
 function CountDownLightSwitch(props){
     if(props.toggle==="true"){
         function handleToggleChange(event) {
             setName(event.target.backgroundColor="White");
           }
     }
-    else{
+    else if(props.toggle==="false"){
         function handleToggleChange(event) {
             setName(event.target.backgroundColor="Dark");
           }
@@ -24,7 +24,7 @@ function CountDownLightSwitch(props){
     handleToggleChange(event);
       }
      else{
-        setTimer(count= count-1)
+        setTimer(event.target.value = value+1)
      }
     }
      
@@ -35,7 +35,7 @@ function CountDownLightSwitch(props){
    return(
     <>
     <button onClick={handleToggle} className="toggle-switch">Toggle</button>
-     <button onClick={handleTimer}>Start Timer</button>
+     <button onClick={(handleTimer)=>{handleTimer("30")}}>Start Timer</button>
      <button onClick={handleReset}>Reset</button>
      <></>
   

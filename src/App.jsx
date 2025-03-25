@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-    <CountDownLightSwitch toggle={true}/>
+    <CountDownLightSwitch toggle={true} setTimer ="30"/>
     </>
   )
 }
